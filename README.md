@@ -1,8 +1,9 @@
 <div align="center">
     <img src="./imágenes/stark.jpg" style="width: 900px">
+    <h2>Nadai Starknet UDC con Protostar y L2EsERC721<h2>
+
 </div>
 
-## Nadai Starknet UDC con Protostar y L2EsERC721
 
 En este tutorial aprenderemos algunos de los nuevos cambios que se están añadiendo en Starknet. Utilizaremos el contrato de implementación universal [UDC], en este tutorial conseguiremos el `Class Hass` desde `Protostar`. 
 
@@ -89,6 +90,7 @@ protostar build
 Ahora si todo ha ido bien y nos ha dado en la carpeta [build](/build/L2EsERC721.json) los dos archivos `.json` pues todo ha ido bien. 
 
 ![Graph](/im%C3%A1genes/build1.png)
+
 ![Graph](/im%C3%A1genes/build.png)
 
 Ahora toca delarar el contrato en la red que vayamos usar, en nuestro caso en `Testnet` y nos dará el `Class Hass` que nos hará falta para hacer el `deploymentContract` del UDC. Para eso usamos el siguiente comando.
