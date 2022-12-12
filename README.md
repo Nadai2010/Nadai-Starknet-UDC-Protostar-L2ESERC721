@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="./imágenes/stark.jpg" style="width: 900px">
+</div>
+
 ## Nadai Starknet UDC con Protostar y L2EsERC721
 
 En este tutorial aprenderemos algunos de los nuevos cambios que se están añadiendo en Starknet. Utilizaremos el contrato de implementación universal [UDC], en este tutorial conseguiremos el `Class Hass` desde `Protostar`. 
