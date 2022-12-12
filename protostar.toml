@@ -1,0 +1,7 @@
+[project]
+protostar-version = "0.8.1"
+lib-path = "lib"
+
+[contracts]
+L2EsERC721 = ["src/L2EsERC721.cairo"]
+
