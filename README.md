@@ -162,7 +162,7 @@ starkscan
 
 ![Graph](/im%C3%A1genes/stark.png)
 
-* [Contract Verify](https://testnet.starkscan.co/class/0x07979ccad72fc1cf8eb8d03880c303e9c0d0f8908941203c8b1490844a80c79b#code)
+* [Contract Verify](https://testnet.starkscan.co/contract/0x035aa170a84075f5aeed6ecb66f9ac6fb1ae48c917741e7afa46979d4ee0c50e#class)
 
 ---
 
@@ -170,12 +170,15 @@ starkscan
 
 Ahora si ya ha ido todo bien puede ir a su nuevo contrato desplegado y `Mint` las imágenes de los `POAP` de los Workshop. Deberá de mintear `7 VECES` para conseguir uno de cada modelo, a partir del `8 NO TENDRÁ IMAGEN`. Una vez minteado podra ir a [MINTSQUARE](https://mintsquare.io/starknet-testnet) y ver su colección.
 
-Para ello deberemos ir en nuestro caso [L2EsStarknetes](https://testnet.starkscan.co/contract/0x03a1c616b57ce3e9f46367441bf41aef51a3add98b771a0cd01654b009875a7e#write-contract) en el paso `5 mint` y añadimos `to` y el `Id` que vamos a crear. En mi caso ha sido mi wallet y el `Id` primero el 1, luego 2,...hasta el 7.
+Para ello deberemos ir en nuestro caso [L2EsStarknetes](https://testnet.starkscan.co/contract/0x035aa170a84075f5aeed6ecb66f9ac6fb1ae48c917741e7afa46979d4ee0c50e#write-contract) en el paso `5 mint` y añadimos `to` y el `Id` que vamos a crear. En mi caso ha sido mi wallet y el `Id` primero el 1, luego 2,...hasta el 7.
 
 ![Graph](/im%C3%A1genes/mint.png) ![Graph](/im%C3%A1genes/mint2.png)
 
+* Puede revisar el [HASH MINT 1](https://testnet.starkscan.co/tx/0x2a0a320d446124461300f92b77d0781ab3f290f3b3d58e266c847c61627882b)
 
 Asi podrá ver su colleción después de Mintear toda su colección
+
+![Graph](/im%C3%A1genes/collec1.png)
 
 ![Graph](/im%C3%A1genes/colec.png)
 
