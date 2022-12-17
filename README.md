@@ -102,7 +102,7 @@ protostar declare build/L2EsERC721.json --network testnet
 ![Graph](/im%C3%A1genes/declare.png)
 
 * Aqui obtenemos Class Hash: `0x07979ccad72fc1cf8eb8d03880c303e9c0d0f8908941203c8b1490844a80c79b`
-* Aquí obtemos como se ha enviado la transacción del Class Hass en la [Testnet](https://testnet.starkscan.co/class/0x07979ccad72fc1cf8eb8d03880c303e9c0d0f8908941203c8b1490844a80c79b)
+* Aquí obtemos como se ha enviado la transacción del Class Hash en la [Testnet](https://testnet.starkscan.co/class/0x07979ccad72fc1cf8eb8d03880c303e9c0d0f8908941203c8b1490844a80c79b)
 
 ---
 
