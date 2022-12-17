@@ -5,7 +5,7 @@
 </div>
 
 
-En este tutorial aprenderemos algunos de los nuevos cambios que se están añadiendo en Starknet. Utilizaremos el contrato de implementación universal [UDC], en este tutorial conseguiremos el `Class Hass` desde `Protostar`. 
+En este tutorial aprenderemos algunos de los nuevos cambios que se están añadiendo en Starknet. Utilizaremos el contrato de implementación universal [UDC], en este tutorial conseguiremos el `Class Hash` desde `Protostar`. 
 
 Usaremos varias herramientas para hacer un `deploy` de un contrato ERC721, este código de metadata contiene imágenes que usaremos con la información para `Mint` los `7 POAP` conseguidos en los Workshop [L2 Español](https://t.me/s/l2espaniol) y [Starknetes](https://t.me/s/starknet_es).  Puede revisarlos toda la [PLAYLIST aquí](https://www.youtube.com/playlist?list=PL5LoUunXvIgLCdVerVBPZ2G3bR51Re251)
 
