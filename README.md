@@ -42,8 +42,8 @@ La gente de OpenZeppelin ha sido consciente de la necesidad de tener un contrato
 Para implementar su contrato utilizando el UDC, ahora debemos realizar varios pasos.
 
 1. Compile su contrato.
-2. Declare su clase de contrato en su red de destino (Goerli o Mainnet) y tome nota del `Class Hass` devuelto.
-3. Invoque la función `deploymentContract` del UDC en Goerli o Mainnet, pasando el `Class Hass` de su contrato y los argumentos del constructor, entre otros parámetros.
+2. Declare su clase de contrato en su red de destino (Goerli o Mainnet) y tome nota del `Class Hash` devuelto.
+3. Invoque la función `deploymentContract` del UDC en Goerli o Mainnet, pasando el `Class Hash` de su contrato y los argumentos del constructor, entre otros parámetros.
 
 ---
 
@@ -79,9 +79,9 @@ pip install openzeppelin-cairo-contracts
 
 ---
 
-## Protostar Compile y Class Hass
+## Protostar Compile y Class Hash
 
-Ahora primero probaremos a Compilar nuestro contrato, tenemos que fijarnos que todas las librerias, utils y contratos estén en el proyecto. Si tiene alguna duda puede revisar el Contrato [L2EsERC721.cairo](/src/L2EsERC721.cairo) los `From` para saber bien que se le está pidiendo. Aunque solo clonando la repo no deberia tener ningún problema. El contrato que vamos a compilar lo hemos indicado en el archivo [protostar.toml](/protostar.toml), asi que usaremos los comandos.
+Ahora primero probaremos a Compilar nuestro contrato, tenemos que fijarnos que todas las librerias, utils y contratos estén en el proyecto. Si tiene alguna duda puede revisar el Contrato [L2EsERC721.cairo](/src/L2EsERC721.cairo) los `From` para saber bien que se le está pidiendo. Aunque sólo clonando la repo no debería tener ningún problema. El contrato que vamos a compilar lo hemos indicado en el archivo [protostar.toml](/protostar.toml), asi que usaremos los comandos.
 
 ```bash 
 protostar build
@@ -93,7 +93,7 @@ Ahora si todo ha ido bien y nos ha dado en la carpeta [build](/build/L2EsERC721.
 
 ![Graph](/im%C3%A1genes/build.png)
 
-Ahora toca delarar el contrato en la red que vayamos usar, en nuestro caso en `Testnet` y nos dará el `Class Hass` que nos hará falta para hacer el `deploymentContract` del UDC. Para eso usamos el siguiente comando.
+Ahora toca delarar el contrato en la red que vayamos usar, en nuestro caso en `Testnet` y nos dará el `Class Hash` que nos hará falta para hacer el `deploymentContract` del UDC. Para eso usamos el siguiente comando.
 
 ```bash
 protostar declare build/L2EsERC721.json --network testnet
@@ -101,7 +101,7 @@ protostar declare build/L2EsERC721.json --network testnet
 
 ![Graph](/im%C3%A1genes/declare.png)
 
-* Aqui obtenemos Class hash: `0x07979ccad72fc1cf8eb8d03880c303e9c0d0f8908941203c8b1490844a80c79b`
+* Aqui obtenemos Class Hash: `0x07979ccad72fc1cf8eb8d03880c303e9c0d0f8908941203c8b1490844a80c79b`
 * Aquí obtemos como se ha enviado la transacción del Class Hass en la [Testnet](https://testnet.starkscan.co/class/0x07979ccad72fc1cf8eb8d03880c303e9c0d0f8908941203c8b1490844a80c79b)
 
 ---
@@ -128,7 +128,7 @@ Nuestra conversión nos ha dado.
 5. 184555836509371486644298270517380613565396767415278678887948391494588524912,  181013377130037319514477958885842869644306949936208462993653051087166982263, 2326625651510011578704269826301011662181198383 // https://gateway.pinata.cloud/ip, fs/QmRHH2skwE8ScAXwwmjnX8XKViHw, hTZFJBaavq3KHsCdWj/
 6. 199354445678 // .json
 
-Ahora que tenemos todos convertidos y tenemos nuestro `Class Hass`, estamos listo para implementar el `Deploy` de nuestro ERC721, pero primero aprendamos un poco más sobre algunas definiciones antes de pasar a la implementación real a través del contrato de implementación universal. La dirección UDC es la misma en todas las redes, puede consultarla [aquí](https://testnet.starkscan.co/contract/0x041a78e741e5af2fec34b695679bc6891742439f7afb8484ecd7766661ad02bf#write-contract)]. Como puede ver, tiene un único método externo, `deploymentContract`, que espera: 
+Ahora que tenemos todos convertidos y tenemos nuestro `Class Hash`, estamos listo para implementar el `Deploy` de nuestro ERC721, pero primero aprendamos un poco más sobre algunas definiciones antes de pasar a la implementación real a través del contrato de implementación universal. La dirección UDC es la misma en todas las redes, puede consultarla [aquí](https://testnet.starkscan.co/contract/0x041a78e741e5af2fec34b695679bc6891742439f7afb8484ecd7766661ad02bf#write-contract)]. Como puede ver, tiene un único método externo, `deploymentContract`, que espera: 
 
 * ClassHash: La clase del contrato que desea implementar, que hemos calculado y declarado previamente.
 * Salt: El valor de la `salt` puede ser cualquier número que desee; está ahí solo para introducir aleatoriedad en la dirección generada para su contrato inteligente que pronto se implementará. 
@@ -154,7 +154,7 @@ Si todo ha ido bien nuestro L2EsERC721 estará deployado, ahora usaremos la herr
 npm install -g starkscan
 ```
 
-Podrá ejecutar en su terminal, le saldrá una lista con todos los smart de cairo disponible, en nuestro caso escogeremos `L2EsERC721.cairo`. Y tendremos que añadir nuestro `ClassHass` o `Contract Address`, indicar la Testnet y al terminar su contrato ya estará verficado.
+Podrá ejecutar en su terminal, le saldrá una lista con todos los smart de cairo disponible, en nuestro caso escogeremos `L2EsERC721.cairo`. Y tendremos que añadir nuestro `Class Hash` o `Contract Address`, indicar la Testnet y al terminar su contrato ya estará verficado.
 
 ```bash
 starkscan
@@ -188,5 +188,5 @@ Asi podrá ver su colleción después de Mintear toda su colección
 
 Implementar contratos inteligentes de StarkNet utilizando el `UDC` de OpenZeppelin. El UDC utiliza la nueva llamada al sistema de implementación para que el Secuenciador pueda cobrar cuando implementa contratos inteligentes, un requisito para descentralizar la red. El uso de una llamada al sistema también nos permite integrar implementaciones en la ejecución de cualquier contrato inteligente que creemos.
 
-Otra forma de declarar e implementar un contrato inteligente con UDC es mediante el uso de las herramientas de desarrollo de Argent X disponibles en la extensión de su navegador. Puede usar sus herramientas abriendo la extensión de su navegador y luego yendo a `Configuración → Configuración del desarrollador → Desarrollo de contratos inteligentes` Allí podrá tanto declarar como deployar su contrato pasando los datos requeridos, como `ClassHass` o argumentos. Esto es probablemente más fácil que usar la CLI y tiene el beneficio adicional de rastrear el saldo de su Ether de prueba.
+Otra forma de declarar e implementar un contrato inteligente con UDC es mediante el uso de las herramientas de desarrollo de Argent X disponibles en la extensión de su navegador. Puede usar sus herramientas abriendo la extensión de su navegador y luego yendo a `Configuración → Configuración del desarrollador → Desarrollo de contratos inteligentes` Allí podrá tanto declarar como deployar su contrato pasando los datos requeridos, como `Class Hash` o argumentos. Esto es probablemente más fácil que usar la CLI y tiene el beneficio adicional de rastrear el saldo de su Ether de prueba.
 
